@@ -1,73 +1,128 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        my-project
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div>
+    <NavStep :items="items" />
+    <div class="container container--main">
+      <MainBox />
+    </div>
+    <div class="container container--personal-strengths">
+      <PersonalStrengths />
+    </div>
+    <div class="container container--expectation">
+      <section>
+        <h1>期望职位</h1>
+        <h2>秋天来了，冬天还会远吗</h2>
+        <p>不知道从多久起，仿佛一场紧张的拼搏终于渐渐地透出了分晓，田野从它宽阔的胸膛里透过来一缕悠悠的气息，斜坡上和坝子上有如水一般的清明在散开，四下里的树木和庄稼也开始在微风里摇曳，树叶变得从容而宽余。露水回来了，在清晨和傍晚润湿了田埂，悄悄地挂上田间。露岚也来到了坝子上，静静地浮着，不再回到山谷里去。阳光虽然依旧明亮，却不再痛炙人的脊梁，变得宽怀、清澄，仿佛它终于乏力了，不能蒸融田野了，也就和田野和解了似的；秋天来了！</p>
+      </section>
+    </div>
+    <div class="container container--skills">
+      <section>
+        <h1>掌握技能</h1>
+        <h2>秋天来了，冬天还会远吗</h2>
+        <p>不知道从多久起，仿佛一场紧张的拼搏终于渐渐地透出了分晓，田野从它宽阔的胸膛里透过来一缕悠悠的气息，斜坡上和坝子上有如水一般的清明在散开，四下里的树木和庄稼也开始在微风里摇曳，树叶变得从容而宽余。露水回来了，在清晨和傍晚润湿了田埂，悄悄地挂上田间。露岚也来到了坝子上，静静地浮着，不再回到山谷里去。阳光虽然依旧明亮，却不再痛炙人的脊梁，变得宽怀、清澄，仿佛它终于乏力了，不能蒸融田野了，也就和田野和解了似的；秋天来了！</p>
+      </section>
+    </div>
+    <div class="container container--work-experiences">
+      <section>
+        <h1>工作经历</h1>
+        <h2>秋天来了，冬天还会远吗</h2>
+        <p>不知道从多久起，仿佛一场紧张的拼搏终于渐渐地透出了分晓，田野从它宽阔的胸膛里透过来一缕悠悠的气息，斜坡上和坝子上有如水一般的清明在散开，四下里的树木和庄稼也开始在微风里摇曳，树叶变得从容而宽余。露水回来了，在清晨和傍晚润湿了田埂，悄悄地挂上田间。露岚也来到了坝子上，静静地浮着，不再回到山谷里去。阳光虽然依旧明亮，却不再痛炙人的脊梁，变得宽怀、清澄，仿佛它终于乏力了，不能蒸融田野了，也就和田野和解了似的；秋天来了！</p>
+      </section>
+    </div>
+    <div class="container container--project-experiences">
+      <section>
+        <h1>项目经验</h1>
+        <h2>秋天来了，冬天还会远吗</h2>
+        <p>不知道从多久起，仿佛一场紧张的拼搏终于渐渐地透出了分晓，田野从它宽阔的胸膛里透过来一缕悠悠的气息，斜坡上和坝子上有如水一般的清明在散开，四下里的树木和庄稼也开始在微风里摇曳，树叶变得从容而宽余。露水回来了，在清晨和傍晚润湿了田埂，悄悄地挂上田间。露岚也来到了坝子上，静静地浮着，不再回到山谷里去。阳光虽然依旧明亮，却不再痛炙人的脊梁，变得宽怀、清澄，仿佛它终于乏力了，不能蒸融田野了，也就和田野和解了似的；秋天来了！</p>
+      </section>
+    </div>
+    <div class="container container--education-experiences">
+      <section>
+        <h1>教育经历</h1>
+        <h2>秋天来了，冬天还会远吗</h2>
+        <p>不知道从多久起，仿佛一场紧张的拼搏终于渐渐地透出了分晓，田野从它宽阔的胸膛里透过来一缕悠悠的气息，斜坡上和坝子上有如水一般的清明在散开，四下里的树木和庄稼也开始在微风里摇曳，树叶变得从容而宽余。露水回来了，在清晨和傍晚润湿了田埂，悄悄地挂上田间。露岚也来到了坝子上，静静地浮着，不再回到山谷里去。阳光虽然依旧明亮，却不再痛炙人的脊梁，变得宽怀、清澄，仿佛它终于乏力了，不能蒸融田野了，也就和田野和解了似的；秋天来了！</p>
+      </section>
+    </div>
+    <div class="container container--project--show">
+      <section>
+        <h1>网站样式设计</h1>
+        <h2>秋天来了，冬天还会远吗</h2>
+        <p>不知道从多久起，仿佛一场紧张的拼搏终于渐渐地透出了分晓，田野从它宽阔的胸膛里透过来一缕悠悠的气息，斜坡上和坝子上有如水一般的清明在散开，四下里的树木和庄稼也开始在微风里摇曳，树叶变得从容而宽余。露水回来了，在清晨和傍晚润湿了田埂，悄悄地挂上田间。露岚也来到了坝子上，静静地浮着，不再回到山谷里去。阳光虽然依旧明亮，却不再痛炙人的脊梁，变得宽怀、清澄，仿佛它终于乏力了，不能蒸融田野了，也就和田野和解了似的；秋天来了！</p>
+      </section>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import MainBox from '@/components/index/MainBox'
+import NavStep from '@/components/index/NavStep'
+import PersonalStrengths from '@/components/index/PersonalStrengths'
+
+export default {
+  components: {
+    MainBox,
+    NavStep,
+    PersonalStrengths
+  },
+  computed: {
+    items () {
+      return [
+        { title: '首页展示' },
+        { title: '个人优势' },
+        { title: '期望职位' },
+        { title: '掌握技能' },
+        { title: '工作经历' },
+        { title: '项目经验' },
+        { title: '教育经历' },
+        { title: '其他作品' }
+      ]
+    }
+  }
+}
 </script>
 
-<style>
+<style lang="scss">
+body {
+  background: $--color-dark;
+  color: $--color-gold-dark;
+  font-size: $--font-size-base;
+  line-height: 2;
+}
+
 .container {
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-}
+  padding: 2em 0;
+  min-height: 100vh;
+  section {
+    width: 1170px;
+    text-align: left;
+    padding: 2em;
+  }
+  h1 {
+    color: $--color-white;
+    font-size: $--font-size-xxl;
+    line-height: 3;
+  }
+  h2 {
+    color: $--color-gold;
+    font-size: $--font-size-xl;
+  }
 
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+  &.container--main {
+    background: #212529 url(/img/bg01.gif) repeat;
+  }
+  &:nth-child(odd) {
+    background: $--color-light;
+  }
+  // &.container--personal-strengths,
+  // &.container--expectation,
+  // &.container--skills,
+  // &.container--work-experiences,
+  // &.container--project-experiences,
+  // &.container--education-experiences,
+  // &.container--project--show {
+  // }
 }
 </style>

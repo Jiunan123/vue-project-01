@@ -1,0 +1,78 @@
+
+@font-face {
+  font-family: 'KaushanScript-Regular';
+  src: url(/font/KaushanScript-Regular.otf);
+}
+
+// base
+$--color-primary: #409EFF !default;
+$--color-white: #FFFFFF !default;
+$--color-black: #000000 !default;
+// extend
+$--color-blue: #007bff !default;
+$--color-indigo: #6610f2 !default;
+$--color-purple: #6f42c1 !default;
+$--color-pink: #e83e8c !default;
+$--color-red: #dc3545 !default;
+$--color-orange: #fd7e14 !default;
+$--color-yellow: #ffc107 !default;
+$--color-green: #28a745 !default;
+$--color-teal: #20c997 !default;
+$--color-cyan: #17a2b8 !default;
+$--color-white: #fff !default;
+$--color-gray: #6c757d !default;
+$--color-gray-dark: #343a40 !default;
+$--color-primary: #007bff !default;
+$--color-secondary: #6c757d !default;
+$--color-success: #28a745 !default;
+$--color-info: #17a2b8 !default;
+$--color-warning: #ffc107 !default;
+$--color-danger: #dc3545 !default;
+$--color-light: #D6D6D6 !default;
+$--color-dark: #212529 !default;
+$--color-gold-dark: #878787 !default;
+$--color-gold: #d0bb79 !default;
+
+// font-size
+$--font-size-xs: .12rem !default;
+$--font-size-sm: .13rem !default;
+$--font-size-base: .14rem !default;
+$--font-size-md: .16rem !default;
+$--font-size-lg: .18rem !default;
+$--font-size-xl: .2rem !default;
+$--font-size-xxl: .3rem !default;
+$--font-size-xxxl: .4rem !default;
+
+$--font-family-monospace: Menlo, Monaco, Consolas, Courier, monospace;
+$--font-family-sans-serif: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+      "Microsoft YaHei", SimSun, sans-serif;
+$--font-family-zh: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+      "微软雅黑", Arial, sans-serif;
+$--font-famliy-custom-zh: "隶书", $--font-family-zh;
+$--font-family-custom: 'KaushanScript-Regular', $--font-family-zh;
+
+// btn
+// $--color-primary: #2d8cf0 !default;
+// $--color-warning: orange !default;
+// $--color-disabled: grey !default;
+
+// $--color-text-placeholder: #C0C4CC !default;
+// $--border-color-lighter: #EBEEF5 !default;
+
+// $--button-hover-tint-percent: 20% !default;
+// $--button-active-shade-percent: 10% !default;
+
+// $--button-primary-background-color: $--color-primary !default;
+// $--button-primary-border-color: $--color-primary !default;
+// $--button-primary-font-color: $--color-white !default;
+
+// $--button-disabled-font-color: $--color-text-placeholder !default;
+// $--button-disabled-background-color: $--color-white !default;
+// $--button-disabled-border-color: $--border-color-lighter !default;
+
+// // container
+// $--container-margin: 2em;
+// $--container-background-color: #fff;
+
+// // border
+// $--border-default: 1px solid mix($--color-black, $--color-white, 10%);
