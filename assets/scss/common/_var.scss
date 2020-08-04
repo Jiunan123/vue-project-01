@@ -1,9 +1,3 @@
-
-@font-face {
-  font-family: 'KaushanScript-Regular';
-  src: url(/font/KaushanScript-Regular.otf);
-}
-
 // base
 $--color-primary: #409EFF !default;
 $--color-white: #FFFFFF !default;
@@ -49,7 +43,6 @@ $--font-family-sans-serif: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino
 $--font-family-zh: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
       "微软雅黑", Arial, sans-serif;
 $--font-famliy-custom-zh: "隶书", $--font-family-zh;
-$--font-family-custom: 'KaushanScript-Regular', $--font-family-zh;
 
 // btn
 // $--color-primary: #2d8cf0 !default;

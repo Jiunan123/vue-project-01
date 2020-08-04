@@ -1,0 +1,18 @@
+ @keyframes flyLeftToRight {
+   from {
+     left: -500px;
+   }
+   to {
+     left: 0
+   }
+ }
+
+  @keyframes flyRightToLeft {
+    from {
+      right: -500px;
+    }
+
+    to {
+      right: 0
+    }
+  }

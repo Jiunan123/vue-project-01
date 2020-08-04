@@ -31,6 +31,5 @@ export default {}
 .nav-step {
   text-align: center;
   background: url(/img/bg01.gif)
-  // float: right;
 }
 </style>

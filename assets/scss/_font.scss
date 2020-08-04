@@ -1,0 +1,8 @@
+@import './common/var';
+
+@font-face {
+  font-family: 'KaushanScript-Regular';
+  src: url(/font/KaushanScript-Regular.otf);
+}
+
+$--font-family-custom: 'KaushanScript-Regular', $--font-family-zh;

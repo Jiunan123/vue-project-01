@@ -37,7 +37,14 @@ export default {
   */
   plugins: [
     '@/plugins/element-ui',
-    { src: '~plugins/vue-particles', ssr: false }
+    {
+      src: '~plugins/vue-particles.client',
+      mode: 'client'
+    },
+    {
+      src: '~plugins/v-waypoint.client',
+      mode: 'client'
+    }
   ],
   /*
   ** Auto import components

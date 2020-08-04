@@ -1,11 +1,11 @@
 <template>
   <nav class="navstep">
-    <ul :class="{light: activeItem % 2 !== 0}">
+    <ul :class="{light: activeNavId % 2 !== 0}">
       <li
-        v-for="(item, index) in items"
-        :key="index"
-        :class="{on: activeItem === index}"
-        @click="onClick(index)"
+        v-for="item in navList"
+        :key="item.id"
+        :class="{on: activeNavId === item.id}"
+        @click="onClick(item.id)"
       >
         {{ item.title }}&nbsp;&nbsp;
       </li>
@@ -14,22 +14,10 @@
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex'
 export default {
-  props: {
-    items: {
-      type: Array,
-      default: () => []
-    }
-  },
-  data () {
-    return {
-      activeItem: 0
-    }
-  },
-  watch: {
-    activeItem (val) {
-      this.$store.commit('setActivePage', val)
-    }
+  computed: {
+    ...mapGetters(['activeNavId', 'navList'])
   },
   mounted () {
     this.__lastWheelTimestamp__ = 0
@@ -40,30 +28,34 @@ export default {
         return
       }
       this.__lastWheelTimestamp__ = e.timeStamp
-      if ((e.wheelDeltaY < 0 && this.activeItem + 1 >= this.items.length) ||
-      (e.wheelDeltaY > 0 && this.activeItem === 0)) {
+      const navId = this.activeNavId
+      if ((e.wheelDeltaY < 0 && navId + 1 >= this.navList.length) ||
+      (e.wheelDeltaY > 0 && navId === 0)) {
         return
       }
-      e.wheelDeltaY < 0 ? this.activeItem++ : this.activeItem--
+      e.wheelDeltaY < 0 ? this.setactiveNavId(navId + 1) : this.setactiveNavId(navId - 1)
+      e.preventDefault()
       this.scrollTo()
-    })
+    }, { passive: false })
   },
   methods: {
-    onClick (index) {
-      this.activeItem = index
+    onClick (id) {
+      // todo : 取消直接设置id，统一由waypoint进行汇报。
+      // 当跳转菜单的时候，就会触发多次waypoint
+      this.setactiveNavId(id)
       this.scrollTo()
     },
     scrollTo () {
       window.scrollTo({
-        top: this.activeItem * window.innerHeight,
-        left: 0,
+        top: this.activeNavId * window.innerHeight,
         behavior: 'smooth'
       })
-    }
+    },
+    ...mapMutations(['setactiveNavId'])
   }
 }
+// todo: 设置数据加载出来时，才开始绘制。
 </script>
-
 <style lang="scss">
 $background-color-base: gold;
 .navstep {
@@ -113,7 +105,7 @@ $background-color-base: gold;
       height: 1em;
       width: 1em;
       z-index: 1;
-      transition: background 1s;
+      transition: background-color 1s;
     }
   }
 }
