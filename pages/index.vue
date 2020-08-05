@@ -14,11 +14,7 @@
       </section>
     </div>
     <div class="container container--skills">
-      <section>
-        <h1>掌握技能</h1>
-        <h2>秋天来了，冬天还会远吗</h2>
-        <p>不知道从多久起，仿佛一场紧张的拼搏终于渐渐地透出了分晓，田野从它宽阔的胸膛里透过来一缕悠悠的气息，斜坡上和坝子上有如水一般的清明在散开，四下里的树木和庄稼也开始在微风里摇曳，树叶变得从容而宽余。露水回来了，在清晨和傍晚润湿了田埂，悄悄地挂上田间。露岚也来到了坝子上，静静地浮着，不再回到山谷里去。阳光虽然依旧明亮，却不再痛炙人的脊梁，变得宽怀、清澄，仿佛它终于乏力了，不能蒸融田野了，也就和田野和解了似的；秋天来了！</p>
-      </section>
+      <AnswerSheet />
     </div>
     <div class="container container--work-experiences">
       <section>
@@ -56,12 +52,14 @@
 import MainBox from '@/components/index/MainBox'
 import NavStep from '@/components/index/NavStep'
 import PersonalStrengths from '@/components/index/PersonalStrengths'
+import AnswerSheet from '@/components/index/AnswerSheet'
 import { mapMutations } from 'vuex'
 export default {
   components: {
     MainBox,
     NavStep,
-    PersonalStrengths
+    PersonalStrengths,
+    AnswerSheet
   },
   data () {
     return {
@@ -94,7 +92,6 @@ export default {
   }
 }
 </script>
-
 <style lang="scss">
 body {
   background: $--color-dark;
@@ -104,7 +101,6 @@ body {
 }
 
 .container {
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;

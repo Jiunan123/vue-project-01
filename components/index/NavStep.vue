@@ -1,16 +1,18 @@
 <template>
-  <nav class="navstep">
-    <ul :class="{light: activeNavId % 2 !== 0}">
-      <li
-        v-for="item in navList"
-        :key="item.id"
-        :class="{on: activeNavId === item.id}"
-        @click="onClick(item.id)"
-      >
-        {{ item.title }}&nbsp;&nbsp;
-      </li>
-    </ul>
-  </nav>
+  <div>
+    <nav v-if="navList.length > 0" class="navstep">
+      <ul :class="{light: activeNavId % 2 !== 0}">
+        <li
+          v-for="item in navList"
+          :key="item.id"
+          :class="{on: activeNavId === item.id}"
+          @click="onClick(item.id)"
+        >
+          {{ item.title }}&nbsp;&nbsp;
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <script>
@@ -33,7 +35,7 @@ export default {
       (e.wheelDeltaY > 0 && navId === 0)) {
         return
       }
-      e.wheelDeltaY < 0 ? this.setactiveNavId(navId + 1) : this.setactiveNavId(navId - 1)
+      e.wheelDeltaY < 0 ? this.setActiveNavId(navId + 1) : this.setActiveNavId(navId - 1)
       e.preventDefault()
       this.scrollTo()
     }, { passive: false })
@@ -42,7 +44,7 @@ export default {
     onClick (id) {
       // todo : 取消直接设置id，统一由waypoint进行汇报。
       // 当跳转菜单的时候，就会触发多次waypoint
-      this.setactiveNavId(id)
+      this.setActiveNavId(id)
       this.scrollTo()
     },
     scrollTo () {
@@ -51,13 +53,18 @@ export default {
         behavior: 'smooth'
       })
     },
-    ...mapMutations(['setactiveNavId'])
+    ...mapMutations(['setActiveNavId'])
   }
 }
 // todo: 设置数据加载出来时，才开始绘制。
 </script>
 <style lang="scss">
 $background-color-base: gold;
+@media screen and (max-width: 1599px){
+  .navstep {
+    display: none;
+  }
+}
 .navstep {
   position: fixed;
   right: 5em;

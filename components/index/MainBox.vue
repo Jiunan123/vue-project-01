@@ -104,7 +104,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-@import '../../assets/scss/_font.scss';
+@import '../../assets/css/_font.scss';
 section.main {
   &::before {
     content: " ";

@@ -29,7 +29,10 @@ export default {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    '@/assets/css/waypoint.scss',
+    '@/assets/css/reset.scss',
+    '@/assets/css/main.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -68,7 +71,8 @@ export default {
   ],
   styleResources: {
     scss: [
-      './assets/scss/common/*.scss'
+      './assets/css/common/*.scss',
+      './assets/css/mixin/*.scss'
     ]
   },
   /*

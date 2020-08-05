@@ -32,6 +32,20 @@ export const Time = {
       innerHtml += 'evening'
     }
     return innerHtml
+  },
+  // 格式化为整数位为2位
+  _numberFormate (num) {
+    if (num < 10) {
+      return '0' + num
+    }
+    return '' + num
+  },
+  getCardNumber () {
+    const now = new Date()
+    const str = now.getFullYear() + this._numberFormate(now.getMonth() + 1) +
+    this._numberFormate(now.getDate()) + this._numberFormate(now.getHours()) +
+    this._numberFormate(now.getMinutes())
+    return str
   }
 }
 

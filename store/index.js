@@ -5,11 +5,16 @@ export const state = () => ({
 })
 
 export const mutations = {
-  setactiveNavId (state, data) {
-    state.activeNavId = data
+  setActiveNavId (state, id) {
+    if (id >= state.navInfos.length || id < 0) { return }
+    state.activeNavId = +id
   },
-  setNavInfos (state, data) {
-    state.navInfos = data
+  setActiveNav (state, name) {
+    if (!state.navInfos[name]) { return }
+    state.activeNavId = state.navInfos[name].id
+  },
+  setNavInfos (state, navInfos) {
+    state.navInfos = navInfos
   }
 }
 

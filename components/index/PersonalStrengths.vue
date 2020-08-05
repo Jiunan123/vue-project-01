@@ -1,12 +1,7 @@
 <template>
   <section class="personal-strengths">
-    <el-row>
-      <el-col
-        v-waypoint="waypoint"
-        :span="8"
-        class="info"
-        data-animation-name="flyLeftToRight"
-      >
+    <div class="info">
+      <WayPointItem animation="fly-from-left" report="personal-strengths">
         <h1>个人优势</h1>
         <h2>向你介绍我</h2>
         <p>我是一名来自漳州的女程序猿</p>
@@ -14,77 +9,46 @@
         <p>工作认真负责细心</p>
         <p>主动参与产品设计与讨论</p>
         <p>自主学习能力强</p>
-      </el-col>
-      <el-col
-        v-waypoint="waypoint"
-        :span="16"
-        class="img"
-        data-animation-name="flyRightToLeft"
-      >
+      </WayPointItem>
+    </div>
+    <div class="img">
+      <WayPointItem animation="fly-from-right">
         <img src="/img/autumn.jpg">
-      </el-col>
-    </el-row>
+      </WayPointItem>
+    </div>
   </section>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import WayPointItem from '@/components/WayPointItem'
 export default {
-  data () {
-    return {
-      intersectionOptions: {
-        root: null,
-        rootMargin: '0px',
-        threshold: [0.25, 0.75]
-      }
-    }
-  },
-  computed: {
-    waypoint () {
-      return {
-        active: true,
-        callback: this.onWaypoint,
-        intersectionOptions: this.intersectionOptions
-      }
-    },
-    navInfo () {
-      return this.getNavInfo()('personal-strengths')
-    }
-  },
-  methods: {
-    onWaypoint ({ el, going, direction }) {
-      // going: in, out
-      // direction: top, right, bottom, left
-      if (going === this.$waypointMap.GOING_IN) {
-        el.style.animation = `${el.dataset.animationName} 1s forwards`
-        this.setactiveNavId(this.navInfo.id)
-      }
-    },
-    ...mapMutations(['setactiveNavId']),
-    ...mapGetters(['getNavInfo'])
+  components: {
+    WayPointItem
   }
 }
 </script>
-<style src='@/assets/scss/waypoint.scss' lang='scss'></style>
 <style lang='scss' scoped>
 section.personal-strengths {
   display: flex;
   text-align: right;
   border: 2px solid white;
+  align-items: center;
   .info {
     display: flex;
-    position: relative;
     flex-flow: column nowrap;
+    flex: 0 0 30%;
     justify-content: center;
     height: 100%;
-    left: 0px;
     padding-right: 2em;
   }
-  .img {
-    position: relative;
-    right: 0px;
-    img {
-      vertical-align: middle;
-      max-width: 100%;
+  img {
+    vertical-align: middle;
+    max-width: 100%;
+  }
+  @media screen and (max-width: 790px) {
+    flex-flow: column-reverse;
+    .info {
+      flex: 1 0 auto;
+      text-align: center;
     }
   }
 }

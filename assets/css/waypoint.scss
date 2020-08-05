@@ -1,0 +1,41 @@
+.waypoint-init {
+  position: relative;
+  visibility: hidden;
+}
+
+@mixin flyAnimation ($from) {
+  .fly-from-#{$from} {
+    @extend .waypoint-init;
+    #{$from}: 0;
+  }
+  @keyframes fly-from-#{$from} {
+    from {
+      visibility: hidden;
+      #{$from}: -200px;
+    }
+
+    to {
+      visibility: visible;
+      #{$from}: 0;
+    }
+  }
+}
+
+@each $from in left, right, bottom {
+  @include flyAnimation($from)
+}
+
+@keyframes stamp {
+  from {
+    visibility: hidden;
+    transform: scale(1.3) rotate(-45deg);
+  }
+  to {
+    visibility: visible;
+    transform: scale(1) rotate(-45deg);
+  }
+}
+.stamp {
+  @extend .waypoint-init;
+}
+
