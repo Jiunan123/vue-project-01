@@ -2,8 +2,8 @@
   <section class="personal-strengths">
     <div class="info">
       <WayPointItem animation="fly-from-left" report="personal-strengths">
-        <h1>个人优势</h1>
-        <h2>向你介绍我</h2>
+        <h1>自我介绍</h1>
+        <h2>Confide In Me</h2>
         <p>我是一名来自漳州的女程序猿</p>
         <p>在前后端开发都有一些经验</p>
         <p>工作认真负责细心</p>
