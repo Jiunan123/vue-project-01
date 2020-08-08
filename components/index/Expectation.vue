@@ -2,9 +2,9 @@
   <section class="expectation">
     <h1>期望职位</h1>
     <div class="box-front">
-      <p class="triangle">
+      <h2 class="triangle">
         严肃模式
-      </p>
+      </h2>
       <dl>
         <dt>面试岗位</dt>
         <dd>前端开发工程师</dd>
@@ -23,11 +23,11 @@
       </dl>
     </div>
     <div class="box-back">
-      <p class="triangle">
+      <h2 class="triangle">
         娱乐模式
-      </p>
+      </h2>
       <div
-        v-for="(alt, index) in ['升职加薪?', '找到高富帅?', '当上总经理?', '乖乖搬砖吧!', '出任CEO?', '走向人生巅峰?', '他乡遇故知?']"
+        v-for="(alt, index) in ['升职加薪 ?', '找到高富帅 ?', '当上总经理 ?', '出任 C E O ?', '他乡遇故知 ?', '走向人生巅峰 ?', '乖乖搬砖吧 !']"
         :key="index"
         class="border-box"
       >
@@ -50,8 +50,104 @@
   align-items: center;
 }
 
-// section.expectation {
-// }
+@media screen and (max-width: 1169px){
+  section.expectation {
+    h1 {
+      text-align: center;
+    }
+    $background: #EFEFEF;
+    letter-spacing: .2em;
+    .box-front {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      font-size: $--font-size-md;
+      margin: 1em;
+      padding: 2em;
+      border: 1px solid #d0bb79;
+      border-radius: 1em;
+      background: $background;
+      dd {
+        color: $--color-black;
+      }
+      @media screen and (max-width: 570px) {
+        flex-flow: column;
+        text-align: center;
+      }
+    }
+    .box-back {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      border: 1px solid #d0bb79;
+      border-radius: 1em;
+      margin: 1em;
+      padding: 2em;
+      background: $background;
+      overflow: hidden;
+      h2 {
+        text-align: center;
+        flex: 0 1 100%;
+      }
+      .border-box {
+        position: relative;
+        background: $--color-white;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        transition: all .6s;
+        height: calc(2rem + 4px);
+        width: 3em;
+        box-sizing: content-box;
+        .img {
+          position: absolute;
+          border: 2px solid $--color-white;
+          top: 0;
+          left: 2em;
+          img {
+            vertical-align: middle;
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+        .info {
+          order: -1;
+          writing-mode: vertical-lr;
+          text-align: center;
+          text-indent: 1em;
+        }
+        &:hover,
+        &:focus {
+          & ~ .border-box {
+            transform: translateX(2rem);
+          }
+        }
+      }
+      @media screen and (max-width: 570px) {
+        height: 5.8rem;
+        flex-flow: column;
+        h2 {
+          flex: 0 0 auto;
+        }
+        .border-box {
+          height: 3em;
+          width: calc(2rem + 4px);
+          .img {
+            top: 2em;
+            left: 0;
+          }
+          &:hover,
+          &:focus {
+            & ~ .border-box {
+              transform: translateY(2rem);
+            }
+          }
+          .info {
+            writing-mode: horizontal-tb;
+          }
+        }
+      }
+    }
+  }
+}
 
 @media screen and (min-width: 1170px) {
   @keyframes run {
@@ -68,13 +164,9 @@
     }
     position: relative;
     height: 6.6rem;
-    width: 10rem;
     transform-style: preserve-3d;
     animation: run 10s infinite;
     $box-side-length: 3.2rem;
-    h1 {
-      visibility: hidden;
-    }
     .triangle {
       position: absolute;
       left: 3.4rem;
@@ -82,12 +174,9 @@
       height: $box-side-length/2;
       width: $box-side-length;
       font-size: inherit;
-      font-family: inherit;
-      font-weight: bold;
       text-align: center;
       color: #2F4486;
       background: linear-gradient($--color-gold, $--color-white);
-      line-height: inherit;
       clip-path: polygon(0 0, 100% 0, 50% 100%);
     }
     .box-back {
@@ -108,7 +197,7 @@
         transition: all .6s;
         clip-path: $clip-path-rhombus;
 
-        $points: (0, 1), (1, 2), (1, 0), (2, 1), (3, 2), (3, 0), (4, 1);
+        $points: (2, 1), (3, 2), (0, 1), (4, 1), (3, 0), (1, 0), (1, 2);
         $background-color: purple red cyan rgb(255,128,0) blue green yellow;
         $i: 1;
         @each $x, $y in $points {
@@ -116,7 +205,7 @@
             left: $x * 1.7rem;
             bottom: $y * 1.7rem;
             .info {
-              background: mix(nth($background-color, $i), rgb(255,251,240), 50%);
+              background: mix(nth($background-color, $i), $--color-milk, 50%);
             }
           }
           $i: $i + 1;
@@ -126,7 +215,7 @@
           height: 100%;
           width: 100%;
           opacity: .85;
-          color: black;
+          color: $--color-black;
         }
         .img {
           position: absolute;
@@ -155,7 +244,6 @@
       $clip-path: polygon(33% 0, 66% 0, 100% 50%, 66% 100%, 33% 100%, 0 50%);
       position: absolute;
       left: 15%;
-      z-index: 2;
       height: 100%;
       width: 85%;
       font-size: $--font-size-xxl;
@@ -165,7 +253,6 @@
       flex-flow: row wrap;
       align-content: center;
       transform: translateZ(100px);
-      opacity: .98;
       &:before {
         content: ' ';
         position: absolute;
@@ -179,7 +266,7 @@
       dl {
         position: relative;
         flex: 1 0 50%;
-        color: white;
+        color: $--color-white;
         border: 1px solid $--color-gold;
         text-align: left;
         padding: 2em;
