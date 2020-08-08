@@ -247,6 +247,8 @@ $error-content-list: '\2713' '\/' '\2665' '|';
       border: $border-base;
       line-height: 1;
       text-align: center;
+      min-width: 2.54rem;
+      overflow: hidden;
       h3, .as-person-number {
         line-height: 1.5;
       }
@@ -375,6 +377,13 @@ $error-content-list: '\2713' '\/' '\2665' '|';
       .as-attention {
         flex: 1 0 auto;
       }
+    }
+  }
+  @media screen and (max-width: 365px) {
+    .as-skills .as-skills-icon{
+      height: auto;
+      width: auto;
+      padding: .1em;
     }
   }
 }
