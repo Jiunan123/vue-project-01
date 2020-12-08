@@ -1,14 +1,29 @@
 <template>
   <div class="container">
-    <Expectation />
+    <WorkExperiences />
   </div>
 </template>
 
 <script>
-import Expectation from '@/components/index/Expectation'
+import WorkExperiences from '@/components/index/WorkExperiences'
 export default {
   components: {
-    Expectation
+    WorkExperiences
+  },
+  async asyncData ({ $axios }) {
+    const _asyncData2 = {}
+    await new Promise((resolve, reject) => {
+      _asyncData2.username = 'John Smith'
+      resolve()
+    })
+    return {
+      _asyncData2
+    }
+  },
+  data () {
+    return {
+      other: '1'
+    }
   }
 }
 </script>
@@ -39,8 +54,5 @@ body {
     color: $--color-gold;
     font-size: $--font-size-xl;
   }
-  // &:nth-child(even) {
-  //   background: $--color-light;
-  // }
 }
 </style>

@@ -4,14 +4,14 @@
       <Nuxt />
     </div>
     <BoundMouseAnimation />
-    <footer>
+    <!-- <footer>
       <dl>
         <dt>QQ:</dt>
         <dd>835899489@qq.com</dd>
         <dt>版权声明：</dt>
         <dd>本项目为纯个人练习项目，不参与任何盈利，图像资源均来源于网上，侵删。</dd>
       </dl>
-    </footer>
+    </footer> -->
   </div>
 </template>
 

@@ -113,7 +113,8 @@ export default {
         SCSS: 80,
         Ruby: 70,
         Webpack: 50,
-        Git: 60
+        Git: 60,
+        PhotoShop: 20
       },
       cardNumber: Time.getCardNumber(),
       wpNavName: 'skills'
